@@ -32,27 +32,27 @@ function onInputText(e) {
 }
 
 function marcupCountryList(country) {
-  const marcup = country.map(x => {
-    return `<li class='country-item'><img src="${x.flags.png}" alt='flag ${x.name.official}' width="70px"><p>${x.name.official}</p></li>`;
+  const marcup = country.map(article => {
+    return `<li class='country-item'><img src="${article.flags.png}" alt='flag ${article.name.official}' width="70px"><p>${article.name.official}</p></li>`;
   });
   refs.listCountry.insertAdjacentHTML('beforeend', marcup.join(''));
 }
 
 function marcupDetailCountry(country) {
-  const marcup = country.map(x => {
+  const marcup = country.map(article => {
     return `<div class="info"><div class="container-info">
-    <img src="${x.flags.png}" alt='flag ${x.name.official}' width="70px">
-    <p>${x.name.official}</p>
+    <img src="${article.flags.png}" alt='flag ${article.name.official}' width="70px">
+    <p>${article.name.official}</p>
   </div>
   <div>
-        <span class='category'>Capital:</span><span class='value-category'>${x.capital}</span>
+        <span class='category'>Capital:</span><span class='value-category'>${article.capital}</span>
   </div>
   <div>
-  <span class='category'>Population:</span><span class='value-category'>${x.population}</span>
+  <span class='category'>Population:</span><span class='value-category'>${article.population}</span>
   </div>
   <div>
   <span class='category'>Languages:</span><span class='value-category'>${Object.values(
-    x.languages,
+    article.languages,
   )}</span>
   </div>
   </div> `;
